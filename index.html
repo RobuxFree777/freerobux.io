@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+<style>
+    .content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+</style>
+</head>
+<body>
+    
+    <div id="snackbar" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
+      </div>
+
+    <div class="content">
+        <!-- Accent-colored raised button with ripple -->
+<button id="show-dialog" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+    Begin the rave
+  </button>
+
+  <dialog class="mdl-dialog">
+    <h4 class="mdl-dialog__title">do you want free robux</h4>
+    <div class="mdl-dialog__content">
+      <p>
+      </p>
+    </div>
+    <div class="mdl-dialog__actions">
+      <button id="begin" type="button" class="mdl-button begin">yes</button>
+      <button type="button" class="mdl-button close">no</button>
+    </div>
+  </dialog>
+
+  <script>
+    var dialog = document.querySelector('dialog');
+    var showDialogButton = document.querySelector('#show-dialog');
+    if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    showDialogButton.addEventListener('click', function() {
+      dialog.showModal();
+    });
+    dialog.querySelector('.close').addEventListener('click', function() {
+      dialog.close();
+    });
+    dialog.querySelector('.begin').addEventListener('click', function() {
+      dialog.close();
+      rave();
+    });
+  </script>
+
+<script>
+    (function() {
+      'use strict';
+      window['counter'] = 0;
+      var snackbarContainer = document.querySelector('#snackbar');
+      var showToastButton = document.querySelector('#begin');
+      showToastButton.addEventListener('click', function() {
+        'use strict';
+        var data = {message: 'Free robux!'};
+        snackbarContainer.MaterialSnackbar.showSnackbar(data);
+      });
+    }());
+    </script>
+
+    <script>
+        function rave() {
+          window.open("https://media.tenor.com/m3OmbbyWnNoAAAAC/bonzi.gif")
+
+            while(true) {
+                moveBy(10, 10)
+                moveBy(-10, -10)
+            };
+        };
+    </script>
+
+    </div>
+
+    <div> 
+
+    </div>
+</body>
+</html> 
